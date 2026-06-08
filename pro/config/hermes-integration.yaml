@@ -1,0 +1,23 @@
+# Hermes Agent Integration for AI Agent Pro Kit
+# Add this to your hermes/config.yaml
+
+providers:
+  freellmapi:
+    base_url: http://localhost:3100/v1
+    api_key: sk-pro-default
+    models:
+      primary: gpt-4o-mini-free        # Default model
+      fast: claude-3-haiku-free        # Quick responses
+      reasoning: deepseek-chat-free    # Complex tasks
+      deep: claude-3.5-sonnet-free     # Deep analysis
+      creative: gemini-2.0-flash-free  # Creative tasks
+
+# Agent Reach integration skills
+skills:
+  - agent-reach
+
+# Environment variables for the stack
+env:
+  EXA_API_KEY: ""  # Set your Exa API key
+  FREEL_API_KEY: sk-pro-default
+  FREEL_BASE_URL: http://localhost:3100/v1
