@@ -1,0 +1,7 @@
+data/
+*.log
+.env
+__pycache__/
+*.pyc
+node_modules/
+gh_token.txt
