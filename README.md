@@ -20,6 +20,13 @@
 - **⚡ One-Click Deploy** — Docker Compose, no cloud account needed
 - **🔌 Hermes Compatible** — Plug straight into your Hermes Agent setup
 
+## 💳 Buy
+
+| Tier | Price | Link |
+|------|-------|------|
+| **Pro** | ¥49 | https://afdian.com/a/你的ID（注册后可用） |
+| **Enterprise** | ¥499 | https://afdian.com/a/你的ID（注册后可用） |
+
 ## 📦 Quick Start
 
 ```bash
