@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  freellmapi:
+    image: ghcr.io/tashfeenahmed/freellmapi:latest
+    container_name: freellmapi
+    ports:
+      - "3100:3100"
+    environment:
+      - UNIFIED_KEY=${FREEL_API_KEY:-sk-pro-default}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@example.com}
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3100/v1/models"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Agent Reach - Web Intelligence Worker
+  agent-reach:
+    image: python:3.11-slim
+    container_name: agent-reach-worker
+    command: >
+      sh -c "pip install agent-reach exa-py yt-dlp feedparser && tail -f /dev/null"
+    volumes:
+      - ./config/agent_reach:/etc/agent-reach
+    depends_on:
+      - freellmapi
+    restart: unless-stopped
