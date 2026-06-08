@@ -1,0 +1,32 @@
+# Agent Reach Profile — Autonomous Web Research
+# Learn more: github.com/Panniantong/Agent-Reach
+
+profile:
+  name: ai-agent-pro-kit
+  model: deepseek-chat
+
+sources:
+  tech:
+    - github.com/trending
+    - news.ycombinator.com
+    - arxiv.org/list/cs.AI/recent
+    - reddit.com/r/MachineLearning
+
+  markets:
+    - reuters.com/markets
+    - finance.yahoo.com
+    - coindesk.com
+
+  social:
+    - twitter.com/search?q=AI+agents&src=typed_query
+    - linkedin.com/feed
+
+actions:
+  daily_brief:
+    - monitor tech sources
+    - summarize top 5 articles
+    - generate market report
+
+  alert:
+    - track keywords: ["AI agent", "autonomous", "LLM"]
+    - notify on matched content
