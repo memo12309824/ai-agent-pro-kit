@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Pro Kit — 你自己的AI Agent生态</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0b0c14;
+            color: #e4e6f0;
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+        .hero h1 { font-size: 48px; color: white; margin-bottom: 12px; }
+        .hero p { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 30px; }
+        .hero .price-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 24px;
+            border-radius: 50px;
+            color: white;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+        }
+        .hero .price-tag strong { font-size: 20px; }
+
+        /* Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 40px 0; }
+        .card {
+            background: #141622;
+            border: 1px solid #2a2d3e;
+            border-radius: 16px;
+            padding: 28px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover { transform: translateY(-4px); border-color: #667eea; }
+        .card .icon { font-size: 36px; margin-bottom: 12px; }
+        .card h3 { font-size: 18px; margin-bottom: 8px; color: white; }
+        .card p { font-size: 14px; color: #8888a0; }
+
+        /* Pricing */
+        .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 40px 0; }
+        .tier {
+            background: #141622;
+            border: 1px solid #2a2d3e;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .tier.featured { border-color: #667eea; background: linear-gradient(135deg, #141622 0%, #1a1b3a 100%); }
+        .tier h3 { font-size: 20px; color: white; margin-bottom: 8px; }
+        .tier .price { font-size: 36px; font-weight: 700; color: #667eea; margin: 16px 0; }
+        .tier ul { list-style: none; margin: 20px 0; }
+        .tier li { padding: 8px 0; border-bottom: 1px solid #2a2d3e; font-size: 14px; color: #aaa; }
+        .tier li:last-child { border: none; }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            background: #141622;
+            border: 1px solid #2a2d3e;
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+        .cta h2 { margin-bottom: 12px; }
+        .cta p { color: #8888a0; margin-bottom: 24px; }
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .btn:hover { opacity: 0.9; }
+        
+        .features { margin: 40px 0; }
+        .features h2 { margin-bottom: 24px; }
+        .feature-item {
+            display: flex; gap: 16px;
+            padding: 16px 0; border-bottom: 1px solid #2a2d3e;
+        }
+        .feature-item .fi { font-size: 24px; flex-shrink: 0; }
+        .feature-item h4 { color: white; margin-bottom: 4px; }
+
+        footer { text-align: center; padding: 40px 0; color: #555; font-size: 13px; }
+
+        @media (max-width: 768px) {
+            .pricing { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 32px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>🤖 AI Agent Pro Kit</h1>
+            <p>Build your own autonomous AI agent ecosystem in 10 minutes.</p>
+            <div class="price-tag">
+                From <strong>¥49</strong> · One-time payment
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🧠</div>
+                <h3>98 AI Models</h3>
+                <p>GPT-4o, Claude 3.5, Gemini 2.0, DeepSeek V3, Qwen — one API</p>
+            </div>
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>Web Intelligence</h3>
+                <p>Autonomous research, content monitoring, social listening</p>
+            </div>
+            <div class="card">
+                <div class="icon">⚡</div>
+                <h3>One-Click Deploy</h3>
+                <p>Docker Compose, no cloud account needed, runs on your hardware</p>
+            </div>
+        </div>
+
+        <h2 style="text-align:center;margin-top:60px;">💰 Pricing</h2>
+        <div class="pricing">
+            <div class="tier">
+                <h3>🆓 Free</h3>
+                <div class="price">¥0</div>
+                <ul>
+                    <li>Agent Reach CLI</li>
+                    <li>Full documentation</li>
+                    <li>Open source</li>
+                </ul>
+                <a href="https://github.com/memo12309824/ai-agent-pro-kit" class="btn" style="background:#2a2d3e;">Get on GitHub</a>
+            </div>
+            <div class="tier featured">
+                <h3>⚡ Pro</h3>
+                <div class="price">¥49</div>
+                <ul>
+                    <li>FreeLLMAPI (98 models)</li>
+                    <li>Exa Neural Search</li>
+                    <li>Docker Compose deploy</li>
+                    <li>Hermes integration</li>
+                </ul>
+                <a href="#" class="btn">Buy Now</a>
+            </div>
+            <div class="tier">
+                <h3>👑 Enterprise</h3>
+                <div class="price">¥499</div>
+                <ul>
+                    <li>Everything in Pro</li>
+                    <li>Custom integrations</li>
+                    <li>24h priority support</li>
+                    <li>Early access updates</li>
+                </ul>
+                <a href="#" class="btn">Contact</a>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>🚀 Use Cases</h2>
+            <div class="feature-item">
+                <div class="fi">💼</div>
+                <div><h4>Investment Intelligence</h4><p>Monitor markets, parse reports, auto-summarize, get AI-driven insights</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="fi">✍️</div>
+                <div><h4>Content Creation</h4><p>Research → write → publish pipeline with AI assistance at every step</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="fi">🤖</div>
+                <div><h4>Personal AI Assistant</h4><p>Your own private GPT cluster, running on your hardware, no data leaks</p></div>
+            </div>
+            <div class="feature-item">
+                <div class="fi">💻</div>
+                <div><h4>Code Automation</h4><p>PR review, issue triage, doc generation, automated with your custom agents</p></div>
+            </div>
+        </div>
+
+        <div class="cta">
+            <h2>🤝 Want to buy?</h2>
+            <p>WeChat Pay / Alipay accepted. Instant delivery after payment.</p>
+            <a href="https://github.com/memo12309824/ai-agent-pro-kit" class="btn">View on GitHub →</a>
+        </div>
+
+        <footer>
+            <p>AI Agent Pro Kit &copy; 2026 · MIT License</p>
+            <p>Built with ❤️ by memo12309824</p>
+        </footer>
+    </div>
+</body>
+</html>
