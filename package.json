@@ -1,0 +1,19 @@
+{
+  "name": "AI Agent Pro Kit",
+  "version": "1.0.0",
+  "description": "Build your own autonomous agent ecosystem",
+  "tools": ["freellmapi", "agent-reach", "exa-search"],
+  "pricing": {
+    "free": { "price": 0, "features": ["agent-reach CLI", "docs"] },
+    "pro": { "price": 49, "features": ["freellmapi", "exa-search", "docker-compose", "hermes integration"] },
+    "enterprise": { "price": 499, "features": ["everything in pro", "24h support", "custom scripts", "priority updates"] }
+  },
+  "requirements": {
+    "os": "Linux / macOS / Windows (WSL2)",
+    "ram": "2GB minimum",
+    "disk": "10GB",
+    "docker": true
+  },
+  "author": "memo12309824",
+  "license": "MIT"
+}
